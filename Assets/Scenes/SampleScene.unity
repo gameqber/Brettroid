@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling 26x1 Square (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8140322138569576304, guid: ecff42dde353c486e8be8727eeb37a9f, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecff42dde353c486e8be8727eeb37a9f, type: 3}
 --- !u!1 &98369550
@@ -484,6 +488,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Zoomer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: enableTracking
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
 --- !u!1 &206416590
@@ -499,7 +511,7 @@ GameObject:
   - component: {fileID: 206416593}
   m_Layer: 6
   m_Name: Platform 7x1
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -615,7 +627,7 @@ GameObject:
   - component: {fileID: 223420794}
   m_Layer: 6
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -815,7 +827,7 @@ GameObject:
   - component: {fileID: 272327816}
   m_Layer: 6
   m_Name: Wall 1x7 (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1003,6 +1015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Large No Pass
       objectReference: {fileID: 0}
+    - target: {fileID: 1803474113768111235, guid: 1138b094f86004892841ada7c2042ba3, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1138b094f86004892841ada7c2042ba3, type: 3}
 --- !u!1001 &420896864
@@ -1059,6 +1075,10 @@ PrefabInstance:
     - target: {fileID: 7951830496434719610, guid: 54a9acc3f07e4477784154bced37844f, type: 3}
       propertyPath: m_Name
       value: Floor 26x1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951830496434719610, guid: 54a9acc3f07e4477784154bced37844f, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54a9acc3f07e4477784154bced37844f, type: 3}
@@ -1159,7 +1179,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 19.375
+  orthographic size: 20.125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1473,9 +1493,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6819780511109034213, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
       propertyPath: m_Name
       value: Enemy Zoomer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: enableTracking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172822031979468992, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
@@ -1492,7 +1540,7 @@ GameObject:
   - component: {fileID: 981735128}
   m_Layer: 6
   m_Name: Wall 1x5 (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1608,7 +1656,7 @@ GameObject:
   - component: {fileID: 1027756509}
   m_Layer: 6
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1801,7 +1849,7 @@ GameObject:
   - component: {fileID: 1159672954}
   m_Layer: 6
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1946,7 +1994,7 @@ GameObject:
   - component: {fileID: 1174475335}
   m_Layer: 6
   m_Name: Wall 1x5
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2060,6 +2108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Small Lower
       objectReference: {fileID: 0}
+    - target: {fileID: 3816470035179205266, guid: 629e19c91a6fc40af92823e813da1665, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 3816470035179205267, guid: 629e19c91a6fc40af92823e813da1665, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2163,6 +2215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square 4x4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 877221164592527984, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     - target: {fileID: 877221164592527986, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2219,6 +2275,10 @@ PrefabInstance:
     - target: {fileID: 9156211866928467506, guid: 049b2edfad07b4158abd74188bc184f7, type: 3}
       propertyPath: m_Name
       value: Wall Platform 6x1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156211866928467506, guid: 049b2edfad07b4158abd74188bc184f7, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 9156211866928467508, guid: 049b2edfad07b4158abd74188bc184f7, type: 3}
       propertyPath: m_RootOrder
@@ -2470,6 +2530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Small Upper 2x3
       objectReference: {fileID: 0}
+    - target: {fileID: 6199331435951930409, guid: 5dcb784c4dac14b83a5dffec15830a52, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dcb784c4dac14b83a5dffec15830a52, type: 3}
 --- !u!1001 &1747213577
@@ -2573,7 +2637,7 @@ GameObject:
   - component: {fileID: 1794929042}
   m_Layer: 6
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2671,37 +2735,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1842437681 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6819780511109034213, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-  m_PrefabInstance: {fileID: 8937281544351501652}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1842437682 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4872319952636371550, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
   m_PrefabInstance: {fileID: 8937281544351501652}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &1842437686
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842437681}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!4 &1866611786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 877221164592527986, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
@@ -2754,6 +2792,10 @@ PrefabInstance:
     - target: {fileID: 877221164592527984, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
       propertyPath: m_Name
       value: Square 4x4
+      objectReference: {fileID: 0}
+    - target: {fileID: 877221164592527984, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 877221164592527986, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
       propertyPath: m_RootOrder
@@ -2814,7 +2856,7 @@ GameObject:
   - component: {fileID: 1961221309}
   m_Layer: 6
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2925,7 +2967,7 @@ GameObject:
   - component: {fileID: 1962757968}
   m_Layer: 6
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3083,6 +3125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling 26x1 Square (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8140322138569576304, guid: ecff42dde353c486e8be8727eeb37a9f, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecff42dde353c486e8be8727eeb37a9f, type: 3}
 --- !u!1001 &877221164558761364
@@ -3095,6 +3141,10 @@ PrefabInstance:
     - target: {fileID: 877221164592527984, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
       propertyPath: m_Name
       value: Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 877221164592527984, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 877221164592527986, guid: 601a7dfb40ce54da1a8a542bf29ed3a9, type: 3}
       propertyPath: m_RootOrder
@@ -3197,6 +3247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 7951830496434719610, guid: 54a9acc3f07e4477784154bced37844f, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54a9acc3f07e4477784154bced37844f, type: 3}
 --- !u!1001 &5582962550525593111
@@ -3253,6 +3307,10 @@ PrefabInstance:
     - target: {fileID: 8140322138569576304, guid: ecff42dde353c486e8be8727eeb37a9f, type: 3}
       propertyPath: m_Name
       value: Ceiling 26x1 Square
+      objectReference: {fileID: 0}
+    - target: {fileID: 8140322138569576304, guid: ecff42dde353c486e8be8727eeb37a9f, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecff42dde353c486e8be8727eeb37a9f, type: 3}
@@ -3424,6 +3482,14 @@ PrefabInstance:
     - target: {fileID: 6819780511109034213, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
       propertyPath: m_Name
       value: Enemy Zoomer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
+      propertyPath: enableTracking
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Floor
+  - Test Tag
+  - Zoomer Down Ray
+  - Zoomer Diag Ray
   layers:
   - Default
   - TransparentFX
