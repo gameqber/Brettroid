@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1835843229324332994}
   - component: {fileID: 4964241494671594771}
   - component: {fileID: 4420447679432428808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy Skree
   m_TagString: Enemy
   m_Icon: {fileID: 0}

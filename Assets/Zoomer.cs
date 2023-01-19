@@ -6,17 +6,20 @@ public class Zoomer : MonoBehaviour
 {
     public float speed = 2.0f;
     public bool enableTracking = false;
-    private GameObject downRay, diagRay, wallCollision;
-    private int counter = 0;
+    private GameObject downRay, diagRay;
+    //private int counter = 0;
     private bool initialRotation = true;
-    [SerializeField] private int moveRight = 1; // When -1, it will move left
+    [SerializeField] private int moveRight = -1; // When -1, it will move left
     // private int moveSpriteDirection = 0; // 0 = right, 1 = up, 2 = left, 3 = down
     // Start is called before the first frame update
     void Start()
     {
         downRay = transform.GetChild(0).gameObject;
         diagRay = transform.GetChild(1).gameObject;
-        wallCollision = transform.GetChild(2).gameObject;
+        if(moveRight == -1)
+        {
+            FlipSprite();
+        }
     }
 
     // Update is called once per frame
@@ -58,11 +61,12 @@ public class Zoomer : MonoBehaviour
                     Debug.Log("Rotating clockwise");
                 transform.Rotate(new Vector3(0, 0, -90));
             }
+            
         }
         else{
             initialRotation = true;
         }
-        moveSprite();
+        MoveSprite();
         
     }
 
@@ -71,8 +75,10 @@ public class Zoomer : MonoBehaviour
         if(enableTracking)
             Debug.Log("Collision detected between " + this.name + " and " + collision.gameObject.name);
         if(collision.gameObject.tag == "Floor"){
-            Vector3 contactPoint = collision.contacts[0].point;
-            Vector3 center = collider.bounds.center;
+            if(enableTracking)
+                Debug.Log("Collision with floor. Rotating counter-clockwise.");
+            // Vector3 contactPoint = collision.contacts[0].point;
+            // Vector3 center = collider.bounds.center;
 
             transform.Rotate(new Vector3(0, 0, 90));
         }
@@ -81,7 +87,16 @@ public class Zoomer : MonoBehaviour
         } */
     }
 
-    void moveSprite(){
-        transform.position += (transform.rotation * Vector3.right * speed * moveRight) * Time.deltaTime;
+    void MoveSprite(){
+        transform.position += (transform.rotation * Vector3.right * speed) * Time.deltaTime;
+    }
+
+    void FlipSprite()
+    {
+        if (enableTracking)
+        {
+            Debug.Log("Flipping the sprite.");
+        }
+        transform.Rotate(new Vector3(0, 180, 0));
     }
 }
