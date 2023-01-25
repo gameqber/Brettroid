@@ -7,10 +7,9 @@ public class Zoomer : MonoBehaviour
     public float speed = 2.0f;
     public bool enableTracking = false;
     private GameObject downRay, diagRay;
-    //private int counter = 0;
     private bool initialRotation = true;
     [SerializeField] private int moveRight = -1; // When -1, it will move left
-    // private int moveSpriteDirection = 0; // 0 = right, 1 = up, 2 = left, 3 = down
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,44 +26,29 @@ public class Zoomer : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // RaycastHit2D downhit = Physics2D.Raycast(transform.position - new Vector3(0.55f, 0.55f, 0), transform.up * -0.5f, 0.5f);
         RaycastHit2D downhit = Physics2D.Raycast(downRay.transform.position, transform.up * -0.5f, 0.5f);
         if(enableTracking){
             Debug.DrawRay(downRay.transform.position, transform.up * -0.5f, Color.green);
             Debug.DrawRay(diagRay.transform.position, transform.up * -0.5f + transform.right * 0.5f, Color.yellow);
-            /* if (downhit.collider == null && counter % 60 == 0)
-            {
-                //Did not hit something
-                Debug.Log("No more surface!");
-            }
-            else if(counter % 60 == 0)
-            {
-                //Did not hit something
-                Debug.Log("Hitting: " + downhit.collider.tag);
-            }
-            counter++; */
-        }
-
-        // If nothing is below, detect for floor Zoomer is moving onto. If there's no floor there either, rotate.
-        if(downhit.collider == null) {
-            if(initialRotation){
-                if(enableTracking){
-                    Debug.Log("Initial rotation");
-                }
-                
-                transform.Rotate(new Vector3(0, 0, -90));
-                initialRotation = false;
-            }
-            RaycastHit2D diaghit = Physics2D.Raycast(diagRay.transform.position, transform.up * -0.5f + transform.right * 0.5f, 0.5f);
-            if(diaghit.collider == null){
-                if(enableTracking)
-                    Debug.Log("Rotating clockwise");
-                transform.Rotate(new Vector3(0, 0, -90));
-            }
             
         }
+
+        // If something is below Zoomer's downward ray, detect for floor Zoomer is moving onto.
+        if(downhit.collider != null) {
+            if(downhit.collider.tag == "Floor"){
+                initialRotation = true;
+            }
+            else{
+                if(enableTracking){
+                    Debug.Log("Down ray is colliding with non-floor object tagged " + downhit.collider.tag);
+                }
+                SpriteRotationHandler();
+            }
+        }
+
+        // Nothing is below Zoomer's downward ray
         else{
-            initialRotation = true;
+            SpriteRotationHandler();
         }
         MoveSprite();
         
@@ -75,16 +59,13 @@ public class Zoomer : MonoBehaviour
         if(enableTracking)
             Debug.Log("Collision detected between " + this.name + " and " + collision.gameObject.name);
         if(collision.gameObject.tag == "Floor"){
-            if(enableTracking)
-                Debug.Log("Collision with floor. Rotating counter-clockwise.");
-            // Vector3 contactPoint = collision.contacts[0].point;
-            // Vector3 center = collider.bounds.center;
+            if(enableTracking){
+                Debug.Log("Collision with floor. Rotating to topside.");
+                Debug.Break();
+            }
 
             transform.Rotate(new Vector3(0, 0, 90));
         }
-        /* if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player") {
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
-        } */
     }
 
     void MoveSprite(){
@@ -98,5 +79,37 @@ public class Zoomer : MonoBehaviour
             Debug.Log("Flipping the sprite.");
         }
         transform.Rotate(new Vector3(0, 180, 0));
+    }
+
+    void SpriteRotationHandler(){
+        if(initialRotation){
+            if(enableTracking){
+                Debug.Log("Down ray hit nothing or non-floor object. Rotating to underside. Initial rotation.");
+                Debug.Break();
+            }
+            transform.Rotate(new Vector3(0, 0, -90));
+            initialRotation = false;
+        }
+
+        RaycastHit2D diaghit = Physics2D.Raycast(diagRay.transform.position, transform.up * -0.5f + transform.right * 0.5f, 0.5f);
+        if(diaghit.collider != null){
+            if(diaghit.collider.tag == "Floor"){
+                return;
+            }
+            else{
+                if(enableTracking){
+                    Debug.Log("Diag ray hit object tagged " + diaghit.collider.tag + ". Rotating to underside.");
+                    Debug.Break();
+                }
+                transform.Rotate(new Vector3(0, 0, -90));
+            }
+        }
+        else{
+            if(enableTracking){
+                Debug.Log("No hit by diag ray and down ray hit nothing or non-floor object. Rotating to underside.");
+                Debug.Break();
+            }
+            transform.Rotate(new Vector3(0, 0, -90));
+        }
     }
 }
