@@ -6,6 +6,7 @@ public class Zoomer : MonoBehaviour
 {
     public float speed = 2.0f;
     public bool enableTracking = false;
+    public LayerMask IgnorePlayer;
     private GameObject downRay, diagRay;
     private bool initialRotation = true;
     [SerializeField] private int moveRight = -1; // When -1, it will move left
@@ -26,7 +27,7 @@ public class Zoomer : MonoBehaviour
     }
     void FixedUpdate()
     {
-        RaycastHit2D downhit = Physics2D.Raycast(downRay.transform.position, transform.up * -0.5f, 0.5f);
+        RaycastHit2D downhit = Physics2D.Raycast(downRay.transform.position, transform.up * -0.5f, 0.5f, ~IgnorePlayer);
         if(enableTracking){
             Debug.DrawRay(downRay.transform.position, transform.up * -0.5f, Color.green);
             Debug.DrawRay(diagRay.transform.position, transform.up * -0.5f + transform.right * 0.5f, Color.yellow);
@@ -61,7 +62,7 @@ public class Zoomer : MonoBehaviour
         if(collision.gameObject.tag == "Floor"){
             if(enableTracking){
                 Debug.Log("Collision with floor. Rotating to topside.");
-                Debug.Break();
+                // Debug.Break();
             }
 
             transform.Rotate(new Vector3(0, 0, 90));
@@ -85,13 +86,13 @@ public class Zoomer : MonoBehaviour
         if(initialRotation){
             if(enableTracking){
                 Debug.Log("Down ray hit nothing or non-floor object. Rotating to underside. Initial rotation.");
-                Debug.Break();
+                // Debug.Break();
             }
             transform.Rotate(new Vector3(0, 0, -90));
             initialRotation = false;
         }
 
-        RaycastHit2D diaghit = Physics2D.Raycast(diagRay.transform.position, transform.up * -0.5f + transform.right * 0.5f, 0.5f);
+        RaycastHit2D diaghit = Physics2D.Raycast(diagRay.transform.position, transform.up * -0.5f + transform.right * 0.5f, 0.5f, ~IgnorePlayer);
         if(diaghit.collider != null){
             if(diaghit.collider.tag == "Floor"){
                 return;
@@ -99,7 +100,7 @@ public class Zoomer : MonoBehaviour
             else{
                 if(enableTracking){
                     Debug.Log("Diag ray hit object tagged " + diaghit.collider.tag + ". Rotating to underside.");
-                    Debug.Break();
+                    // Debug.Break();
                 }
                 transform.Rotate(new Vector3(0, 0, -90));
             }
@@ -107,7 +108,7 @@ public class Zoomer : MonoBehaviour
         else{
             if(enableTracking){
                 Debug.Log("No hit by diag ray and down ray hit nothing or non-floor object. Rotating to underside.");
-                Debug.Break();
+                // Debug.Break();
             }
             transform.Rotate(new Vector3(0, 0, -90));
         }

@@ -360,10 +360,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Zoomer (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: moveRight
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
 --- !u!1001 &166265765
@@ -491,18 +487,6 @@ PrefabInstance:
     - target: {fileID: 6819780511109034213, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
       propertyPath: m_Name
       value: Enemy Zoomer (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: moveRight
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: enableTracking
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
@@ -1457,10 +1441,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 888780177}
     m_Modifications:
-    - target: {fileID: 850045968249646261, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4872319952636371550, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1505,45 +1485,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4919200620839414355, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6810538641576609704, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6819780511109034213, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
       propertyPath: m_Name
       value: Enemy Zoomer (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: moveRight
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: enableTracking
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8172822031979468992, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
       propertyPath: m_Size.y
@@ -2477,7 +2421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1492123469}
-  runSpeed: 40
+  runSpeed: 27
 --- !u!58 &1492123473
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2614,10 +2558,6 @@ PrefabInstance:
     - target: {fileID: 6819780511109034213, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
       propertyPath: m_Name
       value: Enemy Zoomer (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: moveRight
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
@@ -3512,16 +3452,8 @@ PrefabInstance:
       value: Enemy Zoomer
       objectReference: {fileID: 0}
     - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: moveRight
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7822997685232465257, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
-      propertyPath: enableTracking
-      value: 1
+      propertyPath: IgnoreMe.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7bd64df751a46d88941a2336cf232d, type: 3}
