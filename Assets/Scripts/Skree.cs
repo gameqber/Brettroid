@@ -41,7 +41,6 @@ public class Skree : MonoBehaviour
         }
         differenceX = Mathf.Abs(playerX - skreeX);
         if(differenceX <= 3 && !diving){
-            Debug.Log("Player is within 3 units on X coordinate. Diving!");
             diving = true;
         }
         if(diving && !onFloor){
@@ -59,7 +58,6 @@ public class Skree : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Floor"){
-            Debug.Log("Collided with floor.");
             onFloor = true;
             Invoke("DestroyObject", 1.5f);
         }

@@ -193,7 +193,7 @@ MonoBehaviour:
   enableTracking: 0
   IgnorePlayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1152
   moveRight: 1
 --- !u!50 &6810538641576609704
 Rigidbody2D:
